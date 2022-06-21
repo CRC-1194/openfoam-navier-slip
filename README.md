@@ -14,7 +14,7 @@ This is the implementation of the Navier-Slip boundary condition in OpenFOAM, in
 
     * repository maintenance, documentation, testing
 
-** Funded by the German Research Foundation (DFG - Project-ID 265191195 - SFB 1194 ** 
+**Funded by the German Research Foundation (DFG - Project-ID 265191195 - SFB 1194** 
 
 # Installation 
 
