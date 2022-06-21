@@ -36,9 +36,13 @@ libs ("libnavierSlipBc.so")
 Edit a `0/U` velocity field boundary condition and use  
 
 ```
-    type navierSlip; 
-    slipLength X; 
-    wallVelocity uniform (X X X); 
+    nameOfYourPatch 
+    {
+        type            navierSlip;
+        value           uniform (0 0 0);
+        slipLength      uniform 1e-03;
+        wallVelocity    uniform (0 0 0);
+    }
 ```
 
-Run the solver. 
+Run your OpenFOAM solver. 
