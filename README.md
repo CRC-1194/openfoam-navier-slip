@@ -1,11 +1,18 @@
 # Description 
 
-This is the implementation of the Navier-Slip boundary condition in OpenFOAM. 
+This is the implementation of the Navier-Slip boundary condition in OpenFOAM, information can be found in [Dirk Gründing's Ph.D. thesis, chapter 6.1.2, page 85](https://tuprints.ulb.tu-darmstadt.de/11442/), and chapters 6.3.2 and 6.3.3 are of interest for the capillary rise case.
 
 * Dirk Gründing (former association: MMA, TU Darmstadt, SFB 1194/B02) 
 
-* Tomislav Maric (MMA, TU Darmstadt, SFB 1194/Z-INF, maric@mma.tu-darmstadt.de) 
-    * repository maintenance, documentation
+    * original developer
+
+* Tomislav Maric (MMA, TU Darmstadt, SFB 1194/B02, maric@mma.tu-darmstadt.de) 
+
+    * repository maintenance, documentation, testing
+
+* Suraj Raju (MMA, TU Darmstadt, CRC 1194/B02, raju@mma.tu-darmstadt.de)
+
+    * repository maintenance, documentation, testing
 
 # Installation 
 
