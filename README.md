@@ -6,13 +6,15 @@ This is the implementation of the Navier-Slip boundary condition in OpenFOAM, in
 
     * original developer
 
-* Tomislav Maric (MMA, TU Darmstadt, SFB 1194/B02, maric@mma.tu-darmstadt.de) 
+* Tomislav Maric (MMA, TU Darmstadt, CRC 1194/Z-INF, maric@mma.tu-darmstadt.de) 
 
     * repository maintenance, documentation, testing
 
 * Suraj Raju (MMA, TU Darmstadt, CRC 1194/B02, raju@mma.tu-darmstadt.de)
 
     * repository maintenance, documentation, testing
+
+** Funded by the German Research Foundation (DFG - Project-ID 265191195 - SFB 1194 ** 
 
 # Installation 
 
