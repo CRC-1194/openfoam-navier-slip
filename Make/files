@@ -1,0 +1,3 @@
+navierSlipFvPatchField.C
+
+LIB = $(FOAM_USER_LIBBIN)/navierSlipBc
