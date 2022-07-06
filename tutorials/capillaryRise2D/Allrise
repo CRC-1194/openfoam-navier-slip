@@ -28,6 +28,7 @@ cd rise && rm log.* && cd ..
 cd rise/system && sed -i '28s/.*/endTime  1;/' controlDict && cd ../../
 
 cd rise && sed -i '8,10 s/^/#/' Allrun && cd ..
+cd rise && sed -i '18s/.*/extractCapRiseApex/' Allrun && cd ..
 
 
 if [ $executeCase = 1 ]; then

@@ -9,9 +9,14 @@ runApplication blockMesh
 runApplication makeFaMesh
 runApplication decomposePar
 runParallel $(getApplication)
+#runApplication $(getApplication)
+
 touch case.foam
 reconstructPar
-#extractCapRiseApex   ## Utility to get csv file of apex heights. not in parallel yet
-#runApplication $(getApplication)
+
+### Utility to get csv file of apex heights. not in parallel yet
+#extractCapRiseApex
+
+
 
 #------------------------------------------------------------------------------
