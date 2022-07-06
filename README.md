@@ -55,3 +55,42 @@ Edit a `0/U` velocity field boundary condition and use
 ```
 
 Run your OpenFOAM solver. 
+
+
+# Test case
+
+The capillary rise in 2D is present as a test case for the BC. The case is for oscillatory capillary rise with a parameter omega = 1, and fluid properties given in [Table 1](https://www.sciencedirect.com/science/article/pii/S0307904X20302134#tbl0001) published in [Gruending2020](https://www.sciencedirect.com/science/article/pii/S0307904X20302134).
+
+The capillary interface shape should be first initialised and so first run,
+
+```
+
+cd ~/navierSlipFvPatchField/tutorials/capillaryRise2D/init/
+./Allrun
+
+```
+
+After the simulation in init is completed, do
+
+```
+cd ..
+bash Allrise
+
+```
+The above command will setup the case for rise of capillary and do the post processing. **Note:Select option to run or only setup `rise` case, input the end time of interface initialisation and number of processes selected for parallel run in the Allrise script**
+
+## Utility for post process
+
+To get the evolution of apex height of capillary rise at each time step the `extractCapRiseApex` utility is used. To use the utility first source the OpenFOAM environment and then,
+
+```
+cd ~/navierSlipFvPatchField/extractCapRiseApex
+wmake libso
+
+```
+The utility can be simply called from the command line also in the case folder for rise
+
+```
+extractCapRiseApex
+
+```
