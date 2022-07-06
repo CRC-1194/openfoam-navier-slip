@@ -1,0 +1,35 @@
+#!/bin/sh
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+#----------------------------------Settings------------------------------
+#execute transient rise (1 or 0)
+executeCase=0
+
+#------------------------------------------------------------------------
+
+rm -rf rise
+cp -r init rise
+
+tend=0.1            #### end time of initialisation
+processes=8         #### same number of processes used for initialisation
+proc=$(($processes-1))
+
+
+for i in $(seq 0 $proc); do (cd rise/processor$i && cp $tend/polyMesh/points constant/polyMesh/);done
+for i in $(seq 0 $proc); do (cd rise/processor$i && rm -rf 0.*); done
+
+for i in $(seq 0 $proc); do (cd rise/processor$i && cd 0/ && sed -i '33s/.*/type zeroGradient;/' U && sed -i '34s/.*/value uniform (0 0 0);/' U ); done
+
+for i in $(seq 0 $proc); do (cd rise/processor$i && cd 0/ && sed -i '33s/.*/type fixedValue; value uniform 0;/' p ); done
+
+cd rise && rm log.* && cd ..
+
+cd rise/system && sed -i '28s/.*/endTime  1;/' controlDict && cd ../../
+
+cd rise && sed -i '8,10 s/^/#/' Allrun && cd ..
+
+
+if [ $executeCase = 1 ]; then
+    (cd rise && ./Allrun &)
+fi

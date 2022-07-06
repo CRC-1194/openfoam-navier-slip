@@ -1,0 +1,5 @@
+linux64*
+*.dep
+*.pyc
+*.ipynb_check*
+*~
