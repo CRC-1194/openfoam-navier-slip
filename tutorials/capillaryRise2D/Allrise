@@ -12,7 +12,7 @@ rm -rf rise
 cp -r init rise
 
 tend=0.1            #### end time of initialisation
-processes=8         #### same number of processes used for initialisation
+processes=16        #### same number of processes used for initialisation
 proc=$(($processes-1))
 
 
