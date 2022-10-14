@@ -8,7 +8,7 @@ This is the implementation of the Navier-Slip boundary condition in OpenFOAM, in
 
 * Tomislav Maric (MMA, TU Darmstadt, CRC 1194/Z-INF, maric@mma.tu-darmstadt.de) 
 
-    * repository maintenance, documentation, testing
+    * development, repository maintenance, documentation, testing
 
 * Suraj Raju (MMA, TU Darmstadt, CRC 1194/B02, raju@mma.tu-darmstadt.de)
 
@@ -22,7 +22,7 @@ This is the implementation of the Navier-Slip boundary condition in OpenFOAM, in
 
 The BC should work with other OpenFOAM versions/forks, it was tested with
 
-* OpenFOAM-v2112 
+* OpenFOAM-v2206
 * g++ (GCC) 11.2.0
 
 ## Building 
@@ -30,8 +30,9 @@ The BC should work with other OpenFOAM versions/forks, it was tested with
 Make sure OpenFOAM's environment is set, then run  
 
 ```
- navierSlipFvPatchField ?> wmake  
+ src/navierSlipFvPatchField ?> wmake  
 ```
+
 this compiles and installs the binary in `$FOAM_USER_LIBBIN`. 
 
 # Usage
@@ -56,8 +57,7 @@ Edit a `0/U` velocity field boundary condition and use
 
 Run your OpenFOAM solver. 
 
-
-# Test case
+# Test case: capillary rise
 
 The capillary rise in 2D is present as a test case for the BC. The case is for oscillatory capillary rise with a parameter omega = 1, and fluid properties given in [Table 1](https://www.sciencedirect.com/science/article/pii/S0307904X20302134#tbl0001) published in [Gruending2020](https://www.sciencedirect.com/science/article/pii/S0307904X20302134).
 
@@ -79,7 +79,7 @@ bash Allrise
 ```
 The above command will setup the case for rise of capillary and do the post processing. **Note:Select option to run or only setup `rise` case, input the end time of interface initialisation and number of processes selected for parallel run in the Allrise script**
 
-## Utility for post process
+## Post-processing the capillary rise apex height evolution
 
 To get the evolution of apex height of capillary rise at each time step the `extractCapRiseApex` utility is used. To use the utility first source the OpenFOAM environment and then,
 
@@ -96,3 +96,9 @@ The utility can be simply called from the command line also in the case folder f
 extractCapRiseApex
 
 ```
+
+# Effect of surface roughness on the slip boundary condition
+
+TODO: short description.
+
+For more information, read [studies/effective-slip-length/README.md](studies/effective-slip-length/README.md)

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+WITH_BEAR=$1
+
+wmake $WITH_BEAR src/navierSlipFvPatchField
+wmake $WITH_BEAR all applications
+
+

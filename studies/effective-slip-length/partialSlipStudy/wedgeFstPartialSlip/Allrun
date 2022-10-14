@@ -1,0 +1,10 @@
+#!/bin/sh
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="pimpleFoam"
+
+./Allclean
+
+runApplication blockMesh
+runApplication $application

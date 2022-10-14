@@ -1,0 +1,20 @@
+values
+{
+    solver (pimpleFoam);
+
+    H 
+    (
+        1.831e-3 2.224e-3 2.617e-3 3.010e-3 3.402e-3 3.795e-3 4.188e-3 4.581e-3 4.974e-3 5.367e-3 5.760e-3 6.153e-3 6.546e-3 6.939e-3 7.332e-3 7.724e-3 8.117e-3 8.510e-3 8.903e-3 9.296e-3 // gap height
+    );
+
+    M
+    (
+        16 32 64 128 // number of cells in z direction 
+    );
+
+
+    N
+    (
+        2048 4096 8000 12000 16000 // number of cells in r direction
+    ); 
+}

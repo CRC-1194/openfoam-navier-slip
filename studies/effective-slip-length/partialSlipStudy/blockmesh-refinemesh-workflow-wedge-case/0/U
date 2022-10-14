@@ -1,0 +1,66 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1812                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    top
+    {
+        type            rotatingWallVelocity;
+        origin          (0 0 0);
+        axis            (0 0 1);
+        omega           12.56637;
+    }           
+
+   // top
+   // {
+   //     type            fixedValue;
+   //     value           uniform (0 0 0); // to be adapted for rotation of top>
+   // }
+
+
+    bottom
+    {
+        type             partialSlip;
+        valueFraction    uniform #calc "float(1-0.00108/(0.00108+0.001831/16))"; // 1-slip length/(slip length+gap height/number of cells in z direction)
+    }
+
+    outerWall
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+
+    left
+    {
+        type            wedge;
+    }
+
+    right
+    {
+        type            wedge;
+    }
+
+    axis
+    {
+        type            empty;
+    }
+}
+
+// ************************************************************************* //
