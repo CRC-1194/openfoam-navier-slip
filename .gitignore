@@ -116,3 +116,4 @@ processor*/
 *.out
 *slurm*
 *.sw*
+*_00_*/
