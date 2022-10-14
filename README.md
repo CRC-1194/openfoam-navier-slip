@@ -37,7 +37,7 @@ this compiles and installs the binary in `$FOAM_USER_LIBBIN`.
 
 # Usage
 
-Inside an OpenFOAM simulation case, in `system/cotnrolDict` add 
+Inside an OpenFOAM simulation case, in `system/controlDict` add 
 
 ```
 libs ("libnavierSlipBc.so")
