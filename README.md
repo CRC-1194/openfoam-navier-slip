@@ -88,7 +88,9 @@ cd ~/navierSlipFvPatchField/extractCapRiseApex
 wmake libso
 
 ```
+
 The utility can be simply called from the command line also in the case folder for rise
+
 
 ```
 extractCapRiseApex
