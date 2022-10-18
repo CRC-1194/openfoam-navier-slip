@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+for file in system/*.steadyState;
+do
+    cp $file ${file%%.steadyState}
+    #cp system/file system/${file##.*}
+done
